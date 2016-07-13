@@ -1,8 +1,8 @@
 /*
  * @Author: Administrator
  * @Date:   2016-07-13 18:05:15
- * @Last Modified by:   Administrator
- * @Last Modified time: 2016-07-13 18:30:27
+ * @Last Modified by:   fengyun2
+ * @Last Modified time: 2016-07-13 18:45:59
  */
 
 import {
@@ -18,6 +18,8 @@ let schema = new GraphQLSchema({
         fields: {
             count: {
                 type: GraphQLInt,
+                // add the description
+                description: 'The count!',
                 resolve: function() {
                     return count
                 }
