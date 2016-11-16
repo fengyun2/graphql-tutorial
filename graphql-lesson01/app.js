@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2016-07-13 17:03:18
  * @Last Modified by: fengyun2
- * @Last Modified time: 2016-11-16 12:15:11
+ * @Last Modified time: 2016-11-16 17:36:21
 */
 
 'use strict'
@@ -81,14 +81,7 @@ const schema = new GraphQLSchema({
   })
 })
 
-app.post('/graphql', graphqlHTTP(request => {
-  const startTime = Date.now()
-  return {
-    schema: schema,
-    pretty: true,
-    formatError: error => ({message: error.message, locations: error.locations, statck: error.statck, path: error.path})
-  }
-})).get('/graphql', graphqlHTTP(request => {
+app.all('/graphql', graphqlHTTP(request => {
   const startTime = Date.now()
   return {
     schema: schema,

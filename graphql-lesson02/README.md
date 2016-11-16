@@ -1,5 +1,3 @@
-# koa-graphql
-
 ##Usage:
 
 ```shell
@@ -11,8 +9,16 @@ npm run nodemon
 **post: 请求**
 
 ```shell
+
+#查询 query
+
 # RootQueryType -> scehma下 GraphQLObjectType的 name
 curl -XPOST -H "Content-Type:application/graphql" -d 'query RootQueryType {count}' http://localhost:3000/graphql
+
+curl -XPOST -H 'Content-Type:application/graphql'  -d '{__schema { queryType { name, fields { name, description} }}}' http://localhost:3000/graphql
+
+# 增删改 mutation
+curl -XPOST -H 'Content-Type:application/graphql' -d 'mutation RootMutationType { updateCount }' http://localhost:3000/graphql
 ```
 
 **get: 请求**

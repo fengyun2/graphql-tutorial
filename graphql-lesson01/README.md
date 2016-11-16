@@ -1,8 +1,15 @@
-curl方式:
+##Usage:
+
+```shell
+npm run nodemon
+```
+
+###curl方式:
 
 **post: 请求**
 
 ```shell
+# Query -> scehma下 GraphQLObjectType的 name
 curl -XPOST -H "Content-Type:application/graphql" -d 'query Query {user(id:"1"){id,name}}' http://localhost:3000/graphql
 ```
 
@@ -12,4 +19,5 @@ curl -XPOST -H "Content-Type:application/graphql" -d 'query Query {user(id:"1"){
 
 ```shell
 curl -g "http://localhost:3000/graphql?query={user(id:\"1\"){name}}"
+curl -g "http://localhost:3000/graphql?query={user(id:\"1\"){id,name}}"
 ```
